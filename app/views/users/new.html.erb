@@ -3,8 +3,11 @@
       <div class="note">
           <p>This is a simpleRegister Form</p>
       </div>
-      <div class="form-content">
+
+    <div class="form-content">
         <%= form_for(@user) do |f|%>
+        <%= render 'shared/error'%>
+
           <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
