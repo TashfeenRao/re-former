@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     if @user.save
       # success
       flash[:success] = 'User Registered on System!'
-      redirect_to user_url(@user)
+      redirect_to @user
     else
       render 'new'
     end
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       flash[:success] = 'User Updated on System!'
-      redirect_to user_url(@user)
+      redirect_to @user
     else
       render 'edit'
     end
