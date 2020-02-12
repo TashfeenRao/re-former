@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  # get '/users/new', to:'users#new'
-  # post '/users/create',  to: 'users#create'
+  get '/signup', to:'users#new'
+  post '/signup',  to: 'users#create'
 
-  resources :users
+  get '/edit', to:'users#edit'
+  patch '/edit',  to: 'users#update'
+
+  resources :users, only: [:new, :create, :edit, :update]
 end
