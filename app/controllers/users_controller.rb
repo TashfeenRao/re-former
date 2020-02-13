@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id]) 
+    @user = User.find(params[:id])
   end
 
   def create
@@ -23,6 +23,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    # debugger
   end
 
   def update
@@ -38,7 +39,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user)
+    params
       .permit(:username, :email, :password, :password_confirmation)
   end
 end
