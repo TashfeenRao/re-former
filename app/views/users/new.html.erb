@@ -9,6 +9,58 @@
           <p>This is a simpleRegister Form</p>
       </div>
 
+<%# <div class="form-content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Name *" value=""/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Phone Number *" value=""/>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Password *" value=""/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Confirm Password *" value=""/>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btnSubmit">Submit</button>
+                </div> %>
+
+  <% if false %>
+  <div class="form-content">
+        <%= form_for(@user) do |f| %>
+        <%= render 'shared/error'%>
+
+          <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <%= f.text_field :username , '',class: 'form-control', placeholder: "Username"%>
+                </div>
+                <div class="form-group">
+                  <%= f.email_field :email, '',class:'form-control' , placeholder: "Email" %>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <%= f.password_field :password, '',class: 'form-control', placeholder: 'Password' %>
+                </div>
+                <div class="form-group">
+                  <%= f.password_field :password_confirmation, '',class: 'form-control',placeholder:'Password Confirmation'  %>
+                </div>
+              </div>
+          </div>
+          <%= f.submit "Register Account", class:'center btnSubmit' %>
+        <% end %>
+      </div>
+  </div>
+  <% end %>
+
+
     <div class="form-content">
         <%= form_tag("/users",method: "post") do %>
         <%= render 'shared/error'%>
