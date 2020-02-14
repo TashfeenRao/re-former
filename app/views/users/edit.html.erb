@@ -61,7 +61,7 @@
   <% end %>
 
     <div class="form-content">
-        <%= form_tag('/users', method:'post') do %>
+        <%= form_tag(@user, method: :put) do %>
         <%= render 'shared/error'%>
 
           <div class="row">

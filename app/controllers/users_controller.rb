@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = 'User Registered on System!'
-      redirect_to '/user/new'
+      redirect_to new_user_path
     else
       render 'new'
     end
@@ -27,11 +27,12 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    debugger
     if @user.update_attributes(user_params)
       flash[:success] = 'User Updated on System!'
-      redirect_to '/user/edit'
+      redirect_to new_user_path
     else
-      render 'edit'
+      flash[:error] = 'User Updated Fail System!'
     end
   end
 
