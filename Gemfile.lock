@@ -212,9 +212,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt (= 3.1.12)
+  bcrypt
   bootsnap (= 1.4.5)
-  bootstrap-sass (= 3.3.7)
+  bootstrap-sass
   byebug
   capybara (>= 2.15)
   jbuilder (~> 2.7)

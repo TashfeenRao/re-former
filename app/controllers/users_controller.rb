@@ -14,9 +14,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      # success
       flash[:success] = 'User Registered on System!'
-      redirect_to user_url(@user)
+      redirect_to new_user_path
     else
       render 'new'
     end
@@ -30,16 +29,16 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       flash[:success] = 'User Updated on System!'
-      redirect_to user_url(@user)
+      redirect_to new_user_path
     else
-      render 'edit'
+      flash[:error] = 'User Updated Fail System!'
     end
   end
 
   private
 
   def user_params
-    params.require(:user)
+    params
       .permit(:username, :email, :password, :password_confirmation)
   end
 end
